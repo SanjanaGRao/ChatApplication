@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import io from "socket.io-client";
 import ActiveUsers from "../components/ActiveUsers";
 import Messages from "../components/Messages";
@@ -228,4 +228,4 @@ class Chat extends Component {
   }
 }
 
-export default Chat;
+export default withRouter(Chat);

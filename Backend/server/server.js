@@ -8,13 +8,20 @@ const { generateMessage, generateLocationMessage } = require('../server/utils/me
 const { isRealString } = require('../server/utils/validation');
 const { Users } = require('../server/utils/users');
 const publicPath = path.join(__dirname, '../public');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 const server = http.createServer(app);
 app.use(express.static(publicPath));
+app.use(cors());
+const io = socketio(server, {
+    cors: {
+        origin: "http://localhost:3000",
+        mehtods: ["GET", "POST"],
+    },
+}) ;
 
-var io = socketio(server);
+// var io = socketio(server);
 var users = new Users();
 
 io.on('connection', (socket) => {

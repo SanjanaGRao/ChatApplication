@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import classNames from "classnames";
 import "../src/styles/styles.scss";
 
@@ -29,10 +29,10 @@ class App extends Component {
         })}
       >
         <Router>
-          <Routes>
-            <Route path="/chat/:name/:room" exact component={Chat} />
-            <Route path="/" exact component={Join} />
-          </Routes>
+          <Switch>
+            <Route path="/chat/:name/:room" component={Chat} />
+            <Route path="/" component={Join} />
+          </Switch>
         </Router>
       </div>
     );

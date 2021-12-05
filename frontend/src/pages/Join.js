@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 
 const initialState = {
   name: "",
   room: "",
 };
 
-export default class Join extends Component {
+class Join extends Component {
   constructor() {
     super();
     this.state = {
@@ -77,4 +78,5 @@ export default class Join extends Component {
     );
   }
 }
+export default withRouter(Join);
 
