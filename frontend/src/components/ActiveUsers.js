@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 class ActiveUsers extends Component {
   render() {
@@ -11,7 +10,7 @@ class ActiveUsers extends Component {
           <ul>
             {this.props.users.map((user, index) => (
               <li key={index}>
-                <FontAwesomeIcon icon={faCircle} size="xs"></FontAwesomeIcon>
+                <i className="fas fa-circle"></i>
                 <span>{user}</span>
               </li>
             ))}
