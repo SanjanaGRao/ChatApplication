@@ -26,10 +26,12 @@
     ul {
       height: 40rem;
       overflow: scroll;
+    
+    $myColor: #5fdba7;
 
       li {
         i {
-          color: #5fdba7;
+          color: $myColor;
           font-size: 1rem;
           margin-right: 0.8rem;
         }
@@ -74,9 +76,11 @@
         justify-content: flex-end;
       }
       
+      $newColor: cornflowerblue;
+
       #other .message-content {
         justify-content: flex-end;
-        background-color: cornflowerblue;
+        background-color: $newColor;
       }
       
       #other .message-meta {
@@ -103,7 +107,7 @@
             font-weight: 800;
           }
           a {
-            color: #3597de;
+            color: $newColor;
           }
 
           p {
